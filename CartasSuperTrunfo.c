@@ -25,7 +25,7 @@ int main() {
   printf("Insira o estado (Uma letra entre A-H): ");
   scanf("%s", estado1);
 
-  printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01): ");
+  printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01, G03): ");
   scanf("%s", codigoCarta1);
 
   printf("Digite o nome da cidade: ");
@@ -49,7 +49,7 @@ int main() {
   printf("Insira o estado (Uma letra entre A-H): ");
   scanf("%s", estado2);
 
-  printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01): ");
+  printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01, G03): ");
   scanf("%s", codigoCarta2);
 
   printf("Digite o nome da cidade: ");
