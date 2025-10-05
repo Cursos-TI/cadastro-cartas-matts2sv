@@ -85,3 +85,5 @@ int main()
 
     return 0;
 };
+
+// Renomeado para CartasSuperTrunfo.c
