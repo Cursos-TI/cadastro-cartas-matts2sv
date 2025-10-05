@@ -13,3 +13,7 @@ Alterações basicas:
 - O arquivo `CartasSuperTrunfo_1.c` foi renomeado para `CartasSuperTrunfo.c`.
 - Adicionado `readme.md` para anotações.
 
+Desafios:
+1. Desafio Cartas Super Trunfo: `CartasSuperTrunfo.c`
+2. Desafio Lógica Super Trunfo: `CartasSuperTrunfo_2.c`
+
