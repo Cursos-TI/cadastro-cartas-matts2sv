@@ -10,5 +10,6 @@ Atualizações:
 
 
 Alterações basicas: 
-- `CartasSuperTrunfo_1.c` renomeado para `CartasSuperTrunfo.c`.
+- O arquivo `CartasSuperTrunfo_1.c` foi renomeado para `CartasSuperTrunfo.c`.
+- Adicionado `readme.md` para anotações.
 
