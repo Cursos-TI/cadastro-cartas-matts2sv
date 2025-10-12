@@ -1,9 +1,10 @@
+# Super Trunfo em C
+
 [Versão 1]:
 
 - O arquivo `CartasSuperTrunfo_1.c` foi renomeado para `CartasSuperTrunfo.c`.
 - Adicionado `readme.md` para anotações.
 
-======================================================================================================
 
 [Atualizações 2]:
 
@@ -15,7 +16,6 @@
 - Incluído lógica final para exibir resultado da comparação de atributo escolhido.
 - Remoção de comentários excessivos e pequenas melhorias de formatação e mensagens no console.
 
-======================================================================================================
 
 [Atualizações 3]:
 
@@ -31,13 +31,11 @@ Mesmas funcionalidades do `CartasSuperTrunfo_3.c`, mas com as seguintes melhoria
 - Sistema de reinicio de jogo sem encerrar o programa (implementado com `goto`).
 - Pequenos ajustes em mensagens e fluxo do programa para maior clareza e robustez.
 
-======================================================================================================
+==========================================================
 
 [Desafios]:
 1. Desafio Cartas Super Trunfo: `CartasSuperTrunfo.c`
 2. Desafio Lógica Super Trunfo: `CartasSuperTrunfo_2.c`
 3. Desafio Aventureiro Super Trunfo `CartasSuperTrunfo_3.c`
-
-======================================================================================================
 
 
