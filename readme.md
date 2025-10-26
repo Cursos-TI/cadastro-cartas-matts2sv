@@ -1,4 +1,4 @@
-# Super Trunfo em C
+# Super Trunfo em C by Matts.sv
 
 [Versão 1]:
 
@@ -21,21 +21,31 @@
 
 - Adicionado menu interativo com escolha de atributo usando `switch`.
 
-[Bônus] `CartasSuperTrunfo_3_Bonus.c`
+[Atualizações 4]:
 
-Mesmas funcionalidades do `CartasSuperTrunfo_3.c`, mas com as seguintes melhorias:
+- Opção de escolher dois atributos diferentes para comparar cartas.
+- Sistema de tratamento de empates.
+- Calcula o resultado final usando o `Operador Ternário.`
+
+[Bônus] `CartasSuperTrunfo_4_Bonus.c`
+
+Mesmas funcionalidades do `CartasSuperTrunfo_4.c`, mas com as seguintes melhorias:
 
 - Adicionado menu interativo com escolha de atributo usando `switch`.
 - Sistemas de verificação de entradas inválidas ou repetidas (Código da Carta, Número da carta e Nome do Estado).
 - Ajustado `scanf` para ler nomes com espaços usando `%[^\n]` (nome do estado).
 - Sistema de reinicio de jogo sem encerrar o programa (implementado com `goto`).
 - Pequenos ajustes em mensagens e fluxo do programa para maior clareza e robustez.
+- Modos de Jogo: PVP e PVE (Jogador vs Jogador e Jogador vs Máquina).
+- Opção para ler as regras do jogo (com um leve atraso entre as mensagens).
+- Configurações de exibição de cartas e pré comparador.
 
 ==========================================================
 
 [Desafios]:
 1. Desafio Cartas Super Trunfo: `CartasSuperTrunfo.c`
 2. Desafio Lógica Super Trunfo: `CartasSuperTrunfo_2.c`
-3. Desafio Aventureiro Super Trunfo `CartasSuperTrunfo_3.c`
+3. Desafio Aventureiro Super Trunfo: `CartasSuperTrunfo_3.c`
+4. Desafio Mestre Super Trunfo: `CartasSuperTrunfo_4.c`
 
 

@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 // Desafio Super Trunfo - Países
 
@@ -11,46 +10,26 @@ int main()
     // Variáveis para armazenar as propriedades das cidades
     int pontosTuristicos1, pontosTuristicos2;
     unsigned long int populacao1, populacao2;
-    char escolha;
-    char nomeCidade1[20], estado1, codigoCarta1[4];
-    char nomeCidade2[20], estado2, codigoCarta2[4];
+    char nomeCidade1[20], estado1[2], codigoCarta1[4];
+    char nomeCidade2[20], estado2[2], codigoCarta2[4];
     float area1, area2, pib1, pib2;
     float densidade1, densidade2, pibpercapita1, pibpercapita2;
 
     // Define os atributos com base na escolha
-    float atributo1, atributo2;
-    char Atributo[30];
-    int densidade = 0; // 0 = maior vence, 1 = menor vence
+    float atributo1, atributo2, segundoAtributo1, segundoAtributo2;
+    char Atributo[30], segundoAtributo[30];
+    int densidade = 0, segundaDensidade = 0; // 0 = maior vence, 1 = menor vence
 
-    // ######################################################################
-    //  Carta 1
-    // ######################################################################
-
-reiniciar:
+    // Entrada de dados da carta 1
     printf("###### CARTA 1 ######\n\n");
-
-entrada_estado1: // label para voltar em caso de erro
     printf("Insira o estado (Uma letra entre A-H): ");
-    scanf(" %c", &estado1);
-    if (estado1 < 'A' || estado1 > 'H')
-    {
-        printf("\nLetra inválida! Tente novamente.\n\n");
-        goto entrada_estado1; // volta para pedir novamente
-    }
+    scanf("%1s", estado1);
 
-entrada_codigo1: // label para voltar em caso de erro
     printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01, G03): ");
-    scanf(" %3s", codigoCarta1);
-    if (codigoCarta1[0] < 'A' || codigoCarta1[0] > 'H' ||
-        codigoCarta1[1] < '0' || codigoCarta1[1] > '0' || // ajuste para validar números
-        codigoCarta1[2] < '1' || codigoCarta1[2] > '4')
-    {
-        printf("\nCódigo inválido! Tente novamente.\n\n");
-        goto entrada_codigo1; // volta para o label
-    }
+    scanf("%s", codigoCarta1);
 
     printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]", nomeCidade1); // lê string com espaços
+    scanf("%s", nomeCidade1);
 
     printf("População: ");
     scanf("%lu", &populacao1);
@@ -64,76 +43,26 @@ entrada_codigo1: // label para voltar em caso de erro
     printf("Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos1);
 
-    // ######################################################################
-    //  Carta 2
-    // ######################################################################
-
+    // Entrada de dados da carta 2
     printf("\n\n###### CARTA 2 ######\n\n");
-
-// Entrada do estado
-entrada_estado2:
     printf("Insira o estado (Uma letra entre A-H): ");
-    scanf(" %c", &estado2);
+    scanf("%1s", estado2);
 
-    if (estado2 < 'A' || estado2 > 'H')
-    {
-        printf("\nLetra inválida! Tente novamente.\n\n");
-        goto entrada_estado2;
-    }
-
-    // Verifica se já foi usado na carta 1
-    if (estado2 == estado1)
-    {
-        printf("\nErro: Letra já usada na carta 1. Tente novamente.\n\n");
-        goto entrada_estado2;
-    }
-
-// Entrada do código da carta
-entrada_codigo2:
     printf("Insira a letra do estado com um número de 01 a 04 (exemplo: A01, G03): ");
-    scanf(" %3s", codigoCarta2);
+    scanf("%s", codigoCarta2);
 
-    // Validação básica do formato
-    if (codigoCarta2[0] < 'A' || codigoCarta2[0] > 'H' ||
-        codigoCarta2[1] != '0' ||
-        codigoCarta2[2] < '1' || codigoCarta2[2] > '4')
-    {
-        printf("\nCódigo inválido! Tente novamente.\n\n");
-        goto entrada_codigo2;
-    }
-
-    // Verifica se já foi usado na carta 1
-    if (strcmp(codigoCarta2, codigoCarta1) == 0)
-    {
-        printf("\nErro: Código da carta já usado na carta 1. Tente novamente.\n\n");
-        goto entrada_codigo2;
-    }
-
-// Entrada do nome da cidade
-entrada_cidade2:
     printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]", nomeCidade2);
+    scanf("%s", nomeCidade2);
 
-    // Verifica se já foi usado na carta 1
-    if (strcmp(nomeCidade2, nomeCidade1) == 0)
-    {
-        printf("\nErro: Nome da cidade já usado na carta 1. Tente novamente.\n\n");
-        goto entrada_cidade2;
-    }
-
-    // População
     printf("População: ");
     scanf("%lu", &populacao2);
 
-    // Área
     printf("Área em quilômetros: ");
     scanf("%f", &area2);
 
-    // PIB
     printf("PIB: ");
     scanf("%f", &pib2);
 
-    // Pontos turísticos
     printf("Pontos Turísticos: ");
     scanf("%d", &pontosTuristicos2);
 
@@ -150,7 +79,7 @@ entrada_cidade2:
     printf("~~~~~~ CARTA 1 ~~~~~~\n");
     printf("#####################\n");
 
-    printf("\n• Estado: %c\n", estado1);
+    printf("\n• Estado: %s\n", estado1);
     printf("• Código da Carta: %s\n", codigoCarta1);
     printf("• Nome da Cidade: %s\n", nomeCidade1);
     printf("• População: %lu\n", populacao1);
@@ -165,7 +94,7 @@ entrada_cidade2:
     printf("~~~~~~ CARTA 2 ~~~~~~\n");
     printf("#####################\n");
 
-    printf("\n• Estado: %c\n", estado2);
+    printf("\n• Estado: %s\n", estado2);
     printf("• Código da Carta: %s\n", codigoCarta2);
     printf("• Nome da Cidade: %s\n", nomeCidade2);
     printf("• População: %lu\n", populacao2);
@@ -237,10 +166,9 @@ entrada_cidade2:
     }
 
     // Escolha do atributo para comparação
-    int opcao;
+    int opcao, opcao2;
     printf("\n\n######################################################################\n\n");
-    printf("\nEscolha o atributo para comparar:\n\n");
-entrada_opcao:
+    printf("\nEscolha o PRIMEIRO atributo para comparar:\n\n");
     printf("1 - População\n");
     printf("2 - Área\n");
     printf("3 - PIB\n");
@@ -283,11 +211,76 @@ entrada_opcao:
         break;
 
     default:
-        printf("\nOpção inválida! Tente novamente.\n\n");
-        goto entrada_opcao;
+        printf("Opção inválida! Encerrando o programa.\n");
+        return 0;
     }
 
-    printf("\n######################################################################\n");
+    printf("\nEscolha o SEGUNDO atributo (diferente do primeiro):\n\n");
+    switch (opcao)
+    {
+    case 1:
+        printf("2 - Área\n3 - PIB\n4 - Pontos Turísticos\n5 - Densidade Demográfica\n");
+        break;
+    case 2:
+        printf("1 - População\n3 - PIB\n4 - Pontos Turísticos\n5 - Densidade Demográfica\n");
+        break;
+    case 3:
+        printf("1 - População\n2 - Área\n4 - Pontos Turísticos\n5 - Densidade Demográfica\n");
+        break;
+    case 4:
+        printf("1 - População\n2 - Área\n3 - PIB\n5 - Densidade Demográfica\n");
+        break;
+    case 5:
+        printf("1 - População\n2 - Área\n3 - PIB\n4 - Pontos Turísticos\n");
+        break;
+    }
+
+    printf("\nDigite a opção desejada: ");
+    scanf("%d", &opcao2);
+
+    if (opcao2 == opcao)
+    {
+        printf("\nVocê não pode escolher o mesmo atributo duas vezes!\n");
+        return 0;
+    }
+
+    switch (opcao2)
+    {
+    case 1:
+        segundoAtributo1 = populacao1;
+        segundoAtributo2 = populacao2;
+        sprintf(segundoAtributo, "População");
+        break;
+    case 2:
+        segundoAtributo1 = area1;
+        segundoAtributo2 = area2;
+        sprintf(segundoAtributo, "Área");
+        break;
+    case 3:
+        segundoAtributo1 = pib1;
+        segundoAtributo2 = pib2;
+        sprintf(segundoAtributo, "PIB");
+        break;
+    case 4:
+        segundoAtributo1 = pontosTuristicos1;
+        segundoAtributo2 = pontosTuristicos2;
+        sprintf(segundoAtributo, "Pontos Turísticos");
+        break;
+    case 5:
+        segundoAtributo1 = densidade1;
+        segundoAtributo2 = densidade2;
+        sprintf(segundoAtributo, "Densidade Demográfica");
+        segundaDensidade = 1;
+        break;
+    default:
+        printf("Opção inválida!\n");
+        return 0;
+    }
+
+    printf("\n######################################################################\n\n");
+
+    float soma1 = atributo1 + segundoAtributo1;
+    float soma2 = atributo2 + segundoAtributo2;
 
     // Informa o resultado final
     printf("\n\n#####################\n");
@@ -295,51 +288,15 @@ entrada_opcao:
     printf("#####################\n\n");
 
     printf("(Atributo: %s)\n\n", Atributo);
-    printf("Carta 1 - %s (%c): %.0f\n", nomeCidade1, estado1, atributo1);
-    printf("Carta 2 - %s (%c): %.0f\n\n", nomeCidade2, estado2, atributo2);
+    printf("Carta 1 - %s (%s): %.0f\n", nomeCidade1, estado1, atributo1);
+    printf("Carta 2 - %s (%s): %.0f\n\n", nomeCidade2, estado2, atributo2);
 
-    if (densidade == 1)
-    { // menor vence
-        if (atributo1 < atributo2)
-            printf("Resultado: Carta 1 venceu!\n");
-        else if (atributo2 < atributo1)
-            printf("Resultado: Carta 2 venceu!\n");
-        else
-            printf("Resultado: Empate!\n");
-    }
-    else
-    { // maior vence
-        if (atributo1 > atributo2)
-            printf("Resultado: Carta 1 venceu!\n");
-        else if (atributo2 > atributo1)
-            printf("Resultado: Carta 2 venceu!\n");
-        else
-            printf("Resultado: Empate!\n");
-    }
-    printf("\n######################################################################\n\n");
+    char *resultado = (atributo1 == atributo2)
+                          ? "Empate!"
+                          : (densidade == 1
+                                 ? (atributo1 < atributo2 ? "Carta 1 venceu!" : "Carta 2 venceu!")
+                                 : (atributo1 > atributo2 ? "Carta 1 venceu!" : "Carta 2 venceu!"));
 
-entrada_escolha: // label para reinserir
-    printf("Deseja jogar novamente? (s/n): \n");
-    scanf(" %c", &escolha);
-
-    // converte para maiúscula para simplificar a checagem
-    escolha = toupper(escolha);
-
-    if (escolha == 'N')
-    {
-        printf("\nObrigado por jogar! Até a próxima\n\n");
-        return 0;
-    }
-    else if (escolha == 'S')
-    {
-        printf("\nReiniciando o jogo...\n\n");
-        goto reiniciar;
-    }
-    else
-    {
-        printf("\nOpção inválida! Digite apenas 'S' ou 'N'.\n\n");
-        goto entrada_escolha; // volta para pedir novamente
-    }
-
+    printf("Resultado: %s\n", resultado);
     return 0;
 }
